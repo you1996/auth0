@@ -29,5 +29,5 @@ func StartServer() {
 	r.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("public/"))))
 	http.Handle("/", r)
 	log.Print("Server listening on http://localhost:3000/")
-	log.Fatal(http.ListenAndServe(":0", nil))
+	log.Fatal(http.ListenAndServe(":", nil))
 }

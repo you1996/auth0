@@ -1,9 +1,9 @@
 FROM golang:1.12
 
-RUN mkdir app
-ADD . app
-WORKDIR app
+RUN mkdir /tmp/app
+ADD . /tmp/app
+WORKDIR /tmp/app
 
 RUN go build -o main .
-CMD ["./main"]
+CMD ["/tmp/app/main"]
 EXPOSE 3000
