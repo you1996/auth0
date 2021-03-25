@@ -15,5 +15,5 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	templates.RenderTemplate(w, "user", session.Values["profile"])
+	templates.RenderTemplate(w, "user", session.Values)
 }
