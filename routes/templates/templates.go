@@ -27,9 +27,12 @@ func RenderTemplateForUser(w http.ResponseWriter, tmpl string, data1 interface{}
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	m := map[string]interface{}{
+		"Profile":      data1,
+		"Access-token": data2,
+	}
+	err = t.Execute(w, m)
 
-	err = t.Execute(w, data1)
-	err = t.Execute(w, data2)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
