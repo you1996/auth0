@@ -17,8 +17,8 @@
 			<div class="logged-in-box auth0-box logged-in">
 				<h1 id="logo"><img src="/public/auth0_logo_final_blue_RGB.png" /></h1>
 				
-				<h2>Welcome {{.["profile"].nickname}}</h2>
-				<h2>Welcome {{.["access_token"]}}</h2>
+				<h2>Welcome {{.nickname}}</h2>
+				<h2>Experation {{.exp}} <br>  Your scopes :{{.scope}}</h2>
 
 
 				<a id="qsLogoutBtn" class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
