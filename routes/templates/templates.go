@@ -28,8 +28,8 @@ func RenderTemplateForUser(w http.ResponseWriter, tmpl string, data1 interface{}
 		return
 	}
 	m := map[string]interface{}{
-		"Profile":      data1,
-		"Access-token": data2,
+		"Profile":     data1,
+		"Accesstoken": data2,
 	}
 	err = t.Execute(w, m)
 
