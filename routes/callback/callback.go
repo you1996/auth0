@@ -31,6 +31,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	token, err := authenticator.Config.Exchange(context.TODO(), r.URL.Query().Get("code"))
+	log.Printf("no token found: %s", r.URL.Query().Get("code"))
 	if err != nil {
 		log.Printf("no token found: %v", err)
 		w.WriteHeader(http.StatusUnauthorized)
