@@ -31,7 +31,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	token, err := authenticator.Config.Exchange(context.TODO(), r.URL.Query().Get("code"))
-	log.Printf("no token found: %s", r.URL.Query().Get("code"))
+	code := r.URL.Query().Get("code")
 	if err != nil {
 		log.Printf("no token found: %v", err)
 		w.WriteHeader(http.StatusUnauthorized)
@@ -61,7 +61,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
+	session.Values["code"] = code
 	session.Values["id_token"] = rawIDToken
 	session.Values["access_token"] = token.AccessToken
 	session.Values["profile"] = profile
