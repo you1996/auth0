@@ -17,8 +17,8 @@
 			<div class="logged-in-box auth0-box logged-in">
 				<h1 id="logo"><img src="/public/auth0_logo_final_blue_RGB.png" /></h1>
 				<img src="{{.Profile.picture}}" />
-				<h2>Welcome {{.Profile.nickname}}</h2>
-				<div class="col-4"><p>Access Token(Oauth2): {{.Accesstoken.access_token}} </p><br><div class="col-4"><p style="overflow: auto;">ID Token(openId): {{.Accesstoken.id_token}} <br></p></div><br><p>Authorization Code(we get it from the auth server used to get tokens) : {{.Accesstoken.code}} <br></p><br><p>State(generated from our app used to communicate safely with the idp): {{.Accesstoken.state}} <br></p><br><p>Scope : {{.Accesstoken.scope}} <br></p></div>
+				<h2>Welcome {{.Profile.nickname}}</h2><hr>
+				<div class="col-4"><p>Access Token(Oauth2): {{.Accesstoken.access_token}} </p><br><hr><div class="col-4"><p style="overflow: auto;">ID Token(openId): {{.Accesstoken.id_token}} <br></p></div><hr><br><p>Authorization Code(we get it from the auth server used to get tokens) : {{.Accesstoken.code}} <br></p><hr><br><p>State(generated from our app used to communicate safely with the idp): {{.Accesstoken.state}} <br></p><hr><br><p>Scope : {{.Accesstoken.scope}} <br></p></div>
 				<a id="qsLogoutBtn" class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
 			</div>
 		</div>
