@@ -62,6 +62,8 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	session.Values["code"] = code
+	session.Values["scope"] = token.Extra("scope")
+
 	session.Values["id_token"] = rawIDToken
 	session.Values["access_token"] = token.AccessToken
 	session.Values["profile"] = profile
