@@ -36,7 +36,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusUnauthorized)
 		return
 	}
-
+	log.Printf("no token found: %v", token)
 	rawIDToken, ok := token.Extra("id_token").(string)
 	if !ok {
 		http.Error(w, "No id_token field in oauth2 token.", http.StatusInternalServerError)
