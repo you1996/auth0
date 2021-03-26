@@ -16,9 +16,9 @@
 		<div class="login-page clearfix">
 			<div class="logged-in-box auth0-box logged-in">
 				<h1 id="logo"><img src="/public/auth0_logo_final_blue_RGB.png" /></h1>
-				<img src="/public/auth0_logo_final_blue_RGB.png" />
+				<img src="{{.Profile.picture}}" />
 				<h2>Welcome {{.Profile.nickname}}</h2>
-				<div class="col-4"><h2>Access Token {{.Accesstoken.access_token}} <br></h2>
+				<div class="col-4"><h4>Access Token {{.Accesstoken.access_token}} </h4><br><h4>Access Token {{.Accesstoken.id_token}} <br></h4></div>
 				<a id="qsLogoutBtn" class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
 			</div>
 		</div>
