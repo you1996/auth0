@@ -18,7 +18,7 @@
 				<h1 id="logo"><img src="/public/auth0_logo_final_blue_RGB.png" /></h1>
 				<img src="{{.Profile.picture}}" />
 				<h2>Welcome {{.Profile.nickname}}</h2>
-				<div class="col-4"><p>Access Token(Oauth2) {{.Accesstoken.access_token}} </p><br><div class="col-4"><p style="overflow: auto;">ID Token(openId): {{.Accesstoken.id_token}} <br></p></div><br><p>Authorization Code(used to get tokens) : {{.Accesstoken.code}} <br></p><br><p>State(generated from our app used to communicate safely with the idp): {{.Accesstoken.state}} <br></p></div>
+				<div class="col-4"><p>Access Token(Oauth2): {{.Accesstoken.access_token}} </p><br><div class="col-4"><p style="overflow: auto;">ID Token(openId): {{.Accesstoken.id_token}} <br></p></div><br><p>Authorization Code(used to get tokens the authorization server) : {{.Accesstoken.code}} <br></p><br><p>State(generated from our app used to communicate safely with the idp): {{.Accesstoken.state}} <br></p><br><p>Scope : {{.Profile.scope}} <br></p></div>
 				<a id="qsLogoutBtn" class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
 			</div>
 		</div>
